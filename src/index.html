@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="full-screen" content="true" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <meta itemprop="name" content="" />
+    <meta itemprop="description" content="" />
+    <meta itemprop="image" content="" />
+    <title>项目标题</title>
+    <!-- build:css css/index.min.css -->
+    <link rel="stylesheet" href="css/lib/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- endbuild -->
+    <script>
+        document.addEventListener('WeixinJSBridgeReady', function() {
+            var shareObj = {
+                title : '',
+                desc : '',
+                img_url : '',
+                link: window.location
+            };
+            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                WeixinJSBridge.invoke('shareTimeline', shareObj, function() {});
+            });
+            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                WeixinJSBridge.invoke('sendAppMessage', shareObj, function() {});
+            });
+        }, false);
+    </script>
+</head>
+<body>
+
+
+<!-- build:js js/index.min.js -->
+<script src="js/lib/mobile-util.js"></script>
+<script src="js/lib/zepto.js"></script>
+<script src="js/index.js"></script>
+<!-- endbuild -->
+</body>
+</html>
