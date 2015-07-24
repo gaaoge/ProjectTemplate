@@ -2,6 +2,10 @@
  * Created by GG on 15/7/23.
  */
 
-$(function () {
+(function ($) {
+    'use strict';
 
-});
+    $(function () {
+
+    });
+}(Zepto));
