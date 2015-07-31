@@ -10,7 +10,7 @@ var minifyCss = require('gulp-minify-css');
 
 var path = {
     index: 'src/index.html',
-    img: 'src/img/**/*',
+    asset: ['src/**/*', '!src/css/**/*', '!src/js/**/*', '!src/*.html'],
     dest: 'build/'
 };
 
@@ -19,8 +19,8 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('copy', ['clean'], function () {
-    gulp.src(path.img)
-        .pipe(gulp.dest(path.dest + 'img/'));
+    gulp.src(path.asset)
+        .pipe(gulp.dest(path.dest));
 });
 
 gulp.task('usemin', ['clean'], function () {
