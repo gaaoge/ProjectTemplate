@@ -2,10 +2,10 @@
  * Created by GG on xx/xx/xx.
  */
 
-(function ($) {
+(function ($, win, doc) {
     'use strict';
 
     $(function () {
 
     });
-}(Zepto));
+}(Zepto, window, document));
