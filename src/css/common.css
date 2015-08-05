@@ -21,7 +21,7 @@ a, img {
 }
 
 /*横屏提示*/
-#landscape {
+#common-landscape {
     position: fixed;
     left: 0;
     top: 0;
@@ -36,23 +36,23 @@ a, img {
 }
 
 @media all and (orientation: landscape) {
-    #landscape {
+    #common-landscape {
         display: block;
     }
 }
 
-#landscape i {
+#common-landscape i {
     display: block;
     width: 50px;
     height: 100px;
     margin: 100px auto;
-    background: url("../img/landscape-phone.png") no-repeat;
+    background: url("../img/common-landscape-phone.png") no-repeat;
     background-size: 100% 100%;
-    -webkit-animation: landscape 2.5s ease infinite;
-    animation: landscape 2.5s ease infinite;
+    -webkit-animation: common-landscape 2.5s ease infinite;
+    animation: common-landscape 2.5s ease infinite;
 }
 
-@-webkit-keyframes landscape {
+@-webkit-keyframes common-landscape {
     0% {
         -webkit-transform: rotate(90deg);
         opacity: 0;
@@ -75,7 +75,7 @@ a, img {
     }
 }
 
-@keyframes landscape {
+@keyframes common-landscape {
     0% {
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
@@ -101,4 +101,18 @@ a, img {
         transform: rotate(0deg);
         opacity: 0
     }
+}
+
+/*分享提示*/
+#common-share {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    background: url("../img/common-share-tip.png") no-repeat right top, rgba(0, 0, 0, 0.6);
+    background-size: 60% auto;
+    text-align: center;
+    display: none;
 }
