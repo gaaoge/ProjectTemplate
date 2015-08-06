@@ -20,32 +20,37 @@
     <!-- endbuild -->
     <!-- build:js_lib js/lib.min.js -->
     <script src="js/lib/fix-viewport.js"></script>
+    <script src="js/lib/pace.js"></script>
     <script src="js/lib/zepto.js"></script>
     <!-- endbuild -->
-    <script>
-        document.addEventListener('WeixinJSBridgeReady', function () {
-            var shareObj = {
-                title: '',
-                desc: '',
-                img_url: '',
-                link: window.location
-            };
-            WeixinJSBridge.on('menu:share:timeline', function (argv) {
-                WeixinJSBridge.invoke('shareTimeline', shareObj, function () {
-                });
-            });
-            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-                WeixinJSBridge.invoke('sendAppMessage', shareObj, function () {
-                });
-            });
-        }, false);
-    </script>
 </head>
 <body>
-<div id="landscape"><i></i>为了更好的体验，请使用竖屏浏览</div>
+<div id="common-loading"></div>
+<div id="common-landscape"></div>
+<div id="common-share"></div>
 
 <!-- build:js_index js/index.min.js -->
 <script src="js/index.js"></script>
 <!-- endbuild -->
+<!--share-->
+<script>
+    document.addEventListener('WeixinJSBridgeReady', function () {
+        var shareObj = {
+            title: '',
+            desc: '',
+            img_url: '',
+            link: window.location
+        };
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', shareObj, function () {
+            });
+        });
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', shareObj, function () {
+            });
+        });
+    }, false);
+</script>
+<!--endshare-->
 </body>
 </html>

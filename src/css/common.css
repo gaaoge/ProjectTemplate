@@ -10,7 +10,7 @@ html, body {
 
 body {
     position: relative;
-    font: 16px/1.5 "Microsoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif;
+    font: 28px/1.5 "Microsoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
     user-select: none;
@@ -20,19 +20,36 @@ a, img {
     -webkit-touch-callout: none;
 }
 
-/*横屏提示*/
-#common-landscape {
+#common-loading, #common-landscape, #common-share {
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    background: #000;
     z-index: 10000;
+}
+
+/*加载进度*/
+#common-loading {
+    background: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+/*横屏提示*/
+#common-landscape {
     display: none;
-    color: #fff;
-    text-align: center;
-    font-size: 28px;
+    background: #000;
 }
 
 @media all and (orientation: landscape) {
@@ -41,15 +58,23 @@ a, img {
     }
 }
 
-#common-landscape i {
+#common-landscape:before {
+    content: '';
     display: block;
     width: 50px;
     height: 100px;
     margin: 100px auto;
-    background: url("../img/common-landscape-phone.png") no-repeat;
+    background: url("../img/common-landscape-phone.png") no-repeat center;
     background-size: 100% 100%;
-    -webkit-animation: common-landscape 2.5s ease infinite;
-    animation: common-landscape 2.5s ease infinite;
+    -webkit-animation: common-landscape 2.4s ease infinite;
+    animation: common-landscape 2.4s ease infinite;
+}
+
+#common-landscape:after {
+    content: '为了更好的体验，请使用竖屏浏览';
+    display: block;
+    color: #fff;
+    text-align: center;
 }
 
 @-webkit-keyframes common-landscape {
@@ -105,14 +130,7 @@ a, img {
 
 /*分享提示*/
 #common-share {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10000;
+    display: none;
     background: url("../img/common-share-tip.png") no-repeat right top, rgba(0, 0, 0, 0.6);
     background-size: 60% auto;
-    text-align: center;
-    display: none;
 }
