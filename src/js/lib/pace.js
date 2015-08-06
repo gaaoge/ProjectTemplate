@@ -295,6 +295,7 @@
             el = this.getElement();
             if (!this.lastRenderedProgress || this.lastRenderedProgress | 0 !== this.progress | 0) {
                 el.innerHTML = (this.progress | 0) + "%";
+                el.setAttribute('data-progress', this.progress | 0);
             }
             return this.lastRenderedProgress = this.progress;
         };
