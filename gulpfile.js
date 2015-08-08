@@ -27,8 +27,7 @@ gulp.task('usemin', ['clean'], function () {
     gulp.src(path.index)
         .pipe(usemin({
             css: [minifyCss()],
-            js_lib: [uglify()],
-            js_index:[uglify()]
+            js: [uglify()]
         }))
         .pipe(gulp.dest(path.dest));
 });
