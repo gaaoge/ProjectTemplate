@@ -50,8 +50,8 @@ gulp.task('replace', [], function () {
     var projectPath = 'http://img5.cache.netease.com/utf8/3g/gg/' + package.name;
     var date = new Date().getTime();
     return gulp.src(path.publish.index)
-        .pipe(replace('css/index.min.css', projectPath + '/css/index.min.css?v=' + date))
-        .pipe(replace('js/index.min.js', projectPath + '/js/index.min.js?v=' + date))
+        .pipe(replace('href="css/index.min.css"', 'href="' + projectPath + '/css/index.min.css?v=' + date + '"'))
+        .pipe(replace('src="js/index.min.js"', 'src="' + projectPath + '/js/index.min.js?v=' + date + '"'))
         .pipe(gulp.dest(path.dest));
 });
 
