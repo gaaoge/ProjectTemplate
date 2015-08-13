@@ -31,7 +31,7 @@ a, img {
 
 /*加载进度*/
 #common-loading {
-    background: #fff;
+    background-color: #fff;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

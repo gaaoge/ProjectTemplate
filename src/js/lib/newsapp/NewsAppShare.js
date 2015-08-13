@@ -33,6 +33,11 @@
                     commonShare.style.display = 'none';
                 }, 2000);
             }
+        },
+        getAbsPath: function (url) {
+            var a = doc.createElement('a');
+            a.href = url;
+            return a.href;
         }
     };
 
@@ -41,15 +46,9 @@
         NewsAppShare.update({
             title: '分享标题',
             desc: '分享描述',
-            img_url: getAbsPath('img/share-icon.png'),
-            link: getAbsPath('')
+            img_url: NewsAppShare.getAbsPath('share-icon.png'),
+            link: NewsAppShare.getAbsPath('')
         });
-
-        function getAbsPath(url) {
-            var a = doc.createElement('a');
-            a.href = url;
-            return a.href;
-        }
     });
 
     //微信

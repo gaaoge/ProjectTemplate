@@ -64,14 +64,15 @@ gulp.task('publish', ['replace'], function () {
             pass: 'wangjun2012',
             remotePath: 'gg/' + package.name + '/'
         }));
-    //gulp.src(path.publish.asset)
-    //    .pipe(ftp({
-    //        host: '61.135.251.132',
-    //        port: '16321',
-    //        user: 'gaoge',
-    //        pass: 'abc123!@#',
-    //        remotePath: 'utf8/3g/gg/' + package.name
-    //    }))
-    //    .pipe(gutil.noop());
 });
-//
+
+gulp.task('test', ['replace'], function () {
+    gulp.src(path.publish.index)
+        .pipe(ftp({
+            host: '220.181.8.33',
+            port: '16321',
+            user: 'wangjun2012',
+            pass: 'wangjun2012',
+            remotePath: 'gg/' + package.name + '/'
+        }));
+});
