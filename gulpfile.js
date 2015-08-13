@@ -14,7 +14,7 @@ var package = require('./package.json');
 var path = {
     pack: {
         index: 'src/index.html',
-        asset: ['src/**/*', '!src/css/**/*', '!src/js/**/*', '!src/*.html']
+        asset: ['src/**/*', '!src/css/**/*', '!src/js/**/*', '!src/index.html']
     },
     publish: {
         index: 'build/index.html',
