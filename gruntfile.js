@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'build',
-                    src: ['*.html'],
+                    src: ['*.html', 'share-icon.png'],
                     dest: '/gg/<%=pkg.name %>'
                 }]
             },
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'build',
-                    src: ['**/*', '!*.html'],
+                    src: ['**/*', '!*.html', '!share-icon.png'],
                     dest: '/utf8/3g/gg/<%=pkg.name %>'
                 }]
             }
