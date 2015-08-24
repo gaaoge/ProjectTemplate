@@ -84,4 +84,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ["ftps_deploy:test"]);
     grunt.registerTask('publish', ["replace", "ftps_deploy:publish_html", "ftps_deploy:publish_asset"]);
+    grunt.registerTask('default', ["test", "publish"]);
 };

@@ -10,7 +10,7 @@
             $commonShare = $('#common-share');
 
         //通用横屏提示设置（android兼容）
-        if (/Android/gi.test(navigator.platform + navigator.userAgent)) {
+        if ($.os.android) {
             $('input, textarea').on('focus', function () {
                 $commonLandscape.css('display', 'none');
             }).on('blur', function () {
