@@ -44,9 +44,9 @@
                     if (NewsAppClient.isNewsApp()) {
                         NewsAppClient.share();
                     } else {
-                        $commonShare.show();
+                        $commonShare.fadeIn(300);
                         setTimeout(function () {
-                            $commonShare.hide();
+                            $commonShare.fadeOut(300);
                         }, 2000);
                     }
                 },
