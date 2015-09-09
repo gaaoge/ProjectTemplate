@@ -33,8 +33,8 @@ module.exports = function (grunt) {
             test: {
                 options: {
                     auth: {
-                        host: '220.181.8.33',
-                        port: '16321',
+                        host: '220.181.98.57',
+                        port: '2100',
                         authKey: 'test'
                     }
                 },
