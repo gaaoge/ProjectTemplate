@@ -10,7 +10,7 @@ html, body {
 
 body {
     position: relative;
-    font: 28px/1.5 Heiti SC, Helvetica Neue, Helvetica, sans-serif;
+    font: .28rem/1.5 Heiti SC, Helvetica Neue, Helvetica, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-overflow-scrolling: touch;
     -webkit-user-select: none;
