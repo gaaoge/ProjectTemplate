@@ -10,11 +10,10 @@ html, body {
 
 body {
     position: relative;
-    font: .28rem/1.5 Heiti SC, Helvetica Neue, Helvetica, sans-serif;
+    font-family: Heiti SC, Helvetica Neue, Helvetica, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-overflow-scrolling: touch;
     -webkit-user-select: none;
-    user-select: none;
 }
 
 a, img {
@@ -59,23 +58,33 @@ a, img {
     }
 }
 
-#common-landscape:before {
+#common-landscape span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#common-landscape span:before {
     content: '';
     display: block;
-    width: 50px;
-    height: 100px;
-    margin: 100px auto;
+    width: 1em;
+    height: 2em;
+    margin: 0 auto 1em auto;
     background: url("../img/common-landscape-phone.png") no-repeat center;
     background-size: 100% 100%;
     -webkit-animation: common-landscape 2.4s ease infinite;
     animation: common-landscape 2.4s ease infinite;
 }
 
-#common-landscape:after {
+#common-landscape span:after {
     content: '为了更好的体验，请使用竖屏浏览';
     display: block;
     color: #fff;
     text-align: center;
+    font-size: .32em;
 }
 
 @-webkit-keyframes common-landscape {
