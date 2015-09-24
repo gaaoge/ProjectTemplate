@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'build',
                     src: ['**/*'],
-                    dest: '/gg/<%=pkg.name %>'
+                    dest: '/gaoge/<%=pkg.name %>'
                 }]
             },
             publish_html: {
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'publish/html',
                     src: ['**/*'],
-                    dest: '/gg/<%=pkg.name %>'
+                    dest: '/3g/gaoge/<%=pkg.name %>'
                 }]
             },
             publish_asset: {
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'publish/asset',
                     src: ['**/*'],
-                    dest: '/utf8/3g/gg/<%=pkg.name %>'
+                    dest: '/utf8/3g/gaoge/<%=pkg.name %>'
                 }]
             }
         }
