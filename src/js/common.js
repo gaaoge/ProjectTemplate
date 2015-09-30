@@ -61,8 +61,8 @@
             NewsAppShare.update({
                 title: '分享标题',
                 desc: '分享描述',
-                img_url: NewsAppShare.getAbsPath('share-icon.png'),
-                link: NewsAppShare.getAbsPath('')
+                img_url: NewsAppShare.getAbsPath('other/share-icon.png'),
+                link: NewsAppShare.getAbsPath('/')
             });
 
             //微信分享设置

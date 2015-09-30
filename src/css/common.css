@@ -13,6 +13,7 @@ body {
     font-family: Heiti SC, Helvetica Neue, Helvetica, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
     -webkit-user-select: none;
 }
 

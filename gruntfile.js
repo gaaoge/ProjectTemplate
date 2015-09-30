@@ -12,13 +12,13 @@ module.exports = function (grunt) {
             html: {
                 expand: true,
                 cwd: 'build',
-                src: ['*.html', 'share-icon.png'],
+                src: ['*.html', 'other/**/*'],
                 dest: 'publish/html'
             },
             asset: {
                 expand: true,
                 cwd: 'build',
-                src: ['**/*', '!*.html', '!share-icon.png'],
+                src: ['css/**/*', 'img/**/*','js/**/*'],
                 dest: 'publish/asset/<%=version %>'
             }
         },
@@ -101,6 +101,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-ftps-deploy');
 
     grunt.registerTask('test', ["ftps_deploy:test"]);
-    grunt.registerTask('publish', ["clean", "copy", "replace", "ftps_deploy:publish_html", "ftps_deploy:publish_asset"]);
+    grunt.registerTask('publish', ["clean", "copy", "replace", "ftps_deploy:publish_asset", "ftps_deploy:publish_html"]);
     grunt.registerTask('default', ["test", "publish"]);
 };
