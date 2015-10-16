@@ -53,12 +53,6 @@ a, img {
     background: #000;
 }
 
-@media all and (orientation: landscape) {
-    #common-landscape {
-        display: block;
-    }
-}
-
 #common-landscape span {
     position: absolute;
     left: 50%;

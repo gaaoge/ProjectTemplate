@@ -2,10 +2,24 @@
  * Created by GG on xx/xx/xx.
  */
 
-(function ($, win, doc) {
+(function () {
     'use strict';
 
-    $(function () {
+    //主函数
+    function main () {
+        init();
+        bind();
+    }
 
-    });
-}(Zepto, window, document));
+    //初始化
+    function init() {
+
+    }
+
+    //绑定事件
+    function bind() {
+
+    }
+
+    $(main);
+}());
