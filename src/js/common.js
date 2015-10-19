@@ -5,18 +5,20 @@
 (function () {
     'use strict';
 
-    var $commonLandscape, $commonShare;
+    var $commonLandscape, $commonPC, $commonShare;
 
     //主函数
     function main() {
         init();
         landscapeSetting();
+        pcSetting();
         shareSetting();
     }
 
     //初始化
     function init() {
         $commonLandscape = $('#common-landscape');
+        $commonPC = $('#common-pc');
         $commonShare = $('#common-share');
     }
 
@@ -33,13 +35,18 @@
                     $commonLandscape.show();
                     break;
             }
-            if (!$.os.phone && !$.os.tablet) {
-                $commonLandscape.show();
-            }
         };
 
         handler();
         window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", handler, false);
+    }
+
+    //通用pc扫码提示设置
+    function pcSetting() {
+        if (!$.os.phone && !$.os.tablet) {
+            new QRCode($commonPC.children()[0]).makeCode(location.href);
+            $commonPC.show();
+        }
     }
 
     //通用分享设置

@@ -21,39 +21,17 @@ a, img {
     -webkit-touch-callout: none;
 }
 
-#common-loading, #common-landscape, #common-share {
+#common-loading, #common-landscape, #common-pc, #common-share {
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     z-index: 10000;
-}
-
-/*加载进度*/
-#common-loading {
-    background-color: #fff;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-/*横屏提示*/
-#common-landscape {
     display: none;
-    background: #000;
 }
 
-#common-landscape span {
+#common-loading > div, #common-landscape > div, #common-pc > div {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -62,7 +40,17 @@ a, img {
     transform: translate(-50%, -50%);
 }
 
-#common-landscape span:before {
+/*加载进度*/
+#common-loading {
+    background-color: #fff;
+}
+
+/*横屏提示*/
+#common-landscape {
+    background: #000;
+}
+
+#common-landscape > div:before {
     content: '';
     display: block;
     width: 1em;
@@ -74,7 +62,7 @@ a, img {
     animation: common-landscape 2.4s ease infinite;
 }
 
-#common-landscape span:after {
+#common-landscape > div:after {
     content: '为了更好的体验，请使用竖屏浏览';
     display: block;
     color: #fff;
@@ -82,6 +70,33 @@ a, img {
     font-size: .32em;
 }
 
+/*pc扫码提示*/
+#common-pc {
+    background: #000;
+}
+
+#common-pc > div img {
+    content: '';
+    display: block;
+    border: 10px solid #fff;
+    margin: 0 auto 60px auto;
+}
+
+#common-pc > div:after {
+    content: '为了更好的体验，请使用手机扫描二维码浏览';
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+
+/*分享提示*/
+#common-share {
+    background: url("../img/common-share-tip.png") no-repeat right top, rgba(0, 0, 0, 0.6);
+    background-size: 60% auto;
+}
+
+/*动画帧*/
 @-webkit-keyframes common-landscape {
     0% {
         -webkit-transform: rotate(90deg);
@@ -131,11 +146,4 @@ a, img {
         transform: rotate(0deg);
         opacity: 0
     }
-}
-
-/*分享提示*/
-#common-share {
-    display: none;
-    background: url("../img/common-share-tip.png") no-repeat right top, rgba(0, 0, 0, 0.6);
-    background-size: 60% auto;
 }

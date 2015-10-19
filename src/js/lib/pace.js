@@ -260,7 +260,7 @@
                 if (!targetElement) {
                     throw new NoTargetError;
                 }
-                this.el = document.createElement('span');
+                this.el = document.createElement('div');
                 if (targetElement.firstChild != null) {
                     targetElement.insertBefore(this.el, targetElement.firstChild);
                 } else {
