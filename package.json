@@ -1,6 +1,7 @@
 {
   "name": "projectName",
   "version": "1.0.0",
+  "author": "gaoge",
   "devDependencies": {
     "del": "^1.2.0",
     "grunt": "^0.4.5",

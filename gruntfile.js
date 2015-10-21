@@ -28,12 +28,12 @@ module.exports = function (grunt) {
                     patterns: [
                         {
                             match: 'href="css/index.min.css"',
-                            replacement: 'href="http://img<%=Math.ceil(Math.random() * 6) %>.cache.netease.com/utf8/3g/gg/' +
+                            replacement: 'href="http://img<%=Math.ceil(Math.random() * 6) %>.cache.netease.com/utf8/3g/<%=pkg.author %>/' +
                             '<%=pkg.name %>/<%=version %>/css/index.min.css"'
                         },
                         {
                             match: 'src="js/index.min.js"',
-                            replacement: 'src="http://img<%=Math.ceil(Math.random() * 6) %>.cache.netease.com/utf8/3g/gg/' +
+                            replacement: 'src="http://img<%=Math.ceil(Math.random() * 6) %>.cache.netease.com/utf8/3g/<%=pkg.author %>/' +
                             '<%=pkg.name %>/<%=version %>/js/index.min.js"'
                         }
                     ],
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'build',
                     src: ['**/*'],
-                    dest: '/gaoge/<%=pkg.name %>'
+                    dest: '/<%=pkg.author %>/<%=pkg.name %>'
                 }]
             },
             publish_html: {
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'publish/html',
                     src: ['**/*'],
-                    dest: '/3g/gaoge/<%=pkg.name %>'
+                    dest: '/3g/<%=pkg.author %>/<%=pkg.name %>'
                 }]
             },
             publish_asset: {
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'publish/asset',
                     src: ['**/*'],
-                    dest: '/utf8/3g/gaoge/<%=pkg.name %>'
+                    dest: '/utf8/3g/<%=pkg.author %>/<%=pkg.name %>'
                 }]
             }
         }
