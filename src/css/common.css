@@ -76,7 +76,6 @@ a, img {
 }
 
 #common-pc > div img {
-    content: '';
     display: block;
     border: 10px solid #fff;
     margin: 0 auto 60px auto;
